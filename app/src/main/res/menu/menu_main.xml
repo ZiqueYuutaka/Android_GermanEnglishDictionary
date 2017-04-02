@@ -1,0 +1,58 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.zique_yuutaka.germanenglishdictionary.MainActivity">
+    <item
+        android:id="@+id/menu_list"
+        android:orderInCategory="100"
+        android:title="@string/menu_list"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_nouns"
+        android:orderInCategory="100"
+        android:title="@string/menu_nouns"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_verbs"
+        android:orderInCategory="100"
+        android:title="@string/menu_verbs"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_prepositions"
+        android:orderInCategory="100"
+        android:title="@string/menu_prepositions"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_adjectives"
+        android:orderInCategory="100"
+        android:title="@string/menu_adjectives"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_adverbs"
+        android:orderInCategory="100"
+        android:title="@string/menu_adverbs"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_numbers"
+        android:orderInCategory="100"
+        android:title="@string/menu_numbers"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_search"
+        android:orderInCategory="100"
+        android:title="@string/menu_search"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_quit"
+        android:orderInCategory="100"
+        android:title="@string/menu_quit"
+        app:showAsAction="never"/>
+</menu>

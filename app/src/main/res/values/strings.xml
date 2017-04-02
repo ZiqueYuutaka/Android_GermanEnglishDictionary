@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GermanEnglishDictionary</string>
+    <string name="menu_list">Create the word list</string>
+    <string name="menu_nouns">German to English nouns</string>
+    <string name="menu_verbs">German to English verbs</string>
+    <string name="menu_prepositions">German to English prepositions</string>
+    <string name="menu_adjectives">German to English adjectives</string>
+    <string name="menu_adverbs">German to English adverbs</string>
+    <string name="menu_numbers">German to English cardinal numbers</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_quit">Quit</string>
+</resources>
