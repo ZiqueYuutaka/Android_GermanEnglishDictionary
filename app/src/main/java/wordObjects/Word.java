@@ -10,6 +10,13 @@ public class Word {
     private String englishWord;
     private String type;
 
+    //Default constructor for debugging
+    public Word(){
+        germanWord = "Duhas";
+        englishWord = "Meh";
+        type="word";
+    }
+
     public Word(String germanWord, String englishWord, String type){
         setType(type);
         setGermanWord(germanWord);

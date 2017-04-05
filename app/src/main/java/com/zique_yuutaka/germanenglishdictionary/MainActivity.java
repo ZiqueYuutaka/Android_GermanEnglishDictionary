@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.ListFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -13,9 +14,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import fragments.MainFragment;
+import fragments.WordListFragment;
 
 public class MainActivity extends AppCompatActivity {
     private static String DEBUG = "DEBUG";
+    private static FragmentManager fm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(DEBUG,"onCreate called");
@@ -28,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FragmentManager fm = getSupportFragmentManager();
+        fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.activity_main_fragment_container);
 
         if(fragment == null){
-            fragment = new MainFragment();
+            fragment = new WordListFragment();
             fm.beginTransaction()
                     .add(R.id.activity_main_fragment_container, fragment)
                     .commit();
@@ -73,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
         }else if(id == R.id.menu_nouns){
             Log.d(DEBUG,"Nouns clicked");
             Log.d(DEBUG,"Launch NounListFragment");
+            /*Fragment listFragment = new WordListFragment();
+            getSupportFragmentManager().beginTransaction().
+            replace(R.id.activity_main_fragment_container, listFragment).commit();
+             */
             return true;
         }else if(id == R.id.menu_verbs){
             Log.d(DEBUG,"Verbs clicked");
