@@ -48,12 +48,26 @@ public class WordListFragment extends Fragment {
     }
 
     private class WordHolder extends RecyclerView.ViewHolder{
-        public TextView mTitleTextView;
+//        public TextView mTitleTextView;
+
+        private TextView tvGermanWord;
+        private TextView tvEnglishWord;
+        private TextView tvSpeechPart;
 
         public WordHolder(View itemView){
             super(itemView);
 
-            mTitleTextView = (TextView) itemView;
+//            mTitleTextView = (TextView) itemView;
+            tvGermanWord = (TextView) itemView.findViewById(R.id.german_word);
+            tvEnglishWord = (TextView) itemView.findViewById(R.id.english_word);
+            tvSpeechPart = (TextView) itemView.findViewById(R.id.word_type);
+        }
+
+        //Set text of views
+        public void bindWord(Word word){
+            tvGermanWord.setText(word.getGermanWord());
+            tvEnglishWord.setText(word.getEnglishWord());
+            tvSpeechPart.setText(word.getType());
         }
     }
 
@@ -69,14 +83,15 @@ public class WordListFragment extends Fragment {
         public WordHolder onCreateViewHolder(ViewGroup parent, int viewType){
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
             View view = layoutInflater
-                    .inflate(android.R.layout.simple_list_item_1, parent,false);
+                    .inflate(R.layout.word_item_layout, parent,false);
             return new WordHolder(view);
         }
 
         @Override
         public void onBindViewHolder(WordHolder holder, int position){
             Word word = mWords.get(position);
-            holder.mTitleTextView.setText(word.getGermanWord());
+            holder.bindWord(word);
+//            holder.mTitleTextView.setText(word.getGermanWord());
         }
 
         @Override
@@ -95,85 +110,4 @@ public class WordListFragment extends Fragment {
         wordRecycler.setAdapter(mWordAdapter);
     }
 
-/*    private class WordHolder extends RecyclerView.ViewHolder{
-
-        private TextView mGermanWord;
-        private TextView mEnglishWord;
-        private TextView mSpeechPart;
-        public TextView mTitleTextView;
-
-        private Word mWord;
-
-        //Create the ViewHolder
-        public WordHolder(View itemView){
-            super(itemView);
-            mTitleTextView = (TextView) itemView;
-            mGermanWord = (TextView) itemView.findViewById(R.id.german_word);
-            mEnglishWord = (TextView) itemView.findViewById(R.id.english_word);
-            mSpeechPart = (TextView) itemView.findViewById(R.id.word_type);
-        }
-
-        //Called in the Adapter.onBindViewHolder
-        public void bindWord(Word word){
-            mWord = word;
-            mGermanWord.setText(mWord.getGermanWord());
-            mEnglishWord.setText(mWord.getEnglishWord());
-            mSpeechPart.setText(mWord.getType());
-        }
-
-        //Overriden from View.OnClickListener
-        @Override
-        public void onClick(View v){
-            mCallbacks.onCrimeSelected(mCrime, mCrimes.indexOf(mCrime));
-
-        }
-    } //End WordHolder
-
-    private class WordAdapter extends RecyclerView.Adapter<WordHolder>{
-        //moved to CrimeListFragment scope
-        private List<Word> mWords;
-
-        public WordAdapter(List<Word> words){
-            mWords = words;
-        }
-
-        //Must override the following three methods
-        @Override
-        //Called when a new View is needed to display an item
-        //Displays minimal information of the Crime
-        public WordHolder onCreateViewHolder(ViewGroup parent, int viewType){
-            LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-            View view = layoutInflater.inflate(android.R.layout.simple_list_item_1, parent, false);
-            return new WordHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(WordHolder holder, int position){
-            Word word = mWords.get(position);
-            //holder.bindWord(word);
-            holder.mTitleTextView.setText(word.getGermanWord());
-        }
-
-        @Override
-        public int getItemCount(){
-
-            return mWords.size();
-        }
-
-        //used to refresh the list of crimes
-        public void setCrimes(List<Word> words){
-            mWords = words;
-        }
-    }//End WordAdapter
-
-    //Sets the List UI by placing adapter in recyclerview
-    private void setUI(){
-        List<Word> words = new ArrayList<>();
-
-        for(int i = 0; i < 10; i++){
-            words.add(new Word());
-        }
-        mWordAdapter = new WordAdapter(words);
-        wordRecycler.setAdapter(mWordAdapter);
-    }*/
 }
