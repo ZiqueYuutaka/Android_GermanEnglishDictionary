@@ -68,30 +68,39 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.menu_list) {
             Log.d(DEBUG,"Setting clicked");
+            Log.d(DEBUG,"Launch CreateListFragment");
             return true;
         }else if(id == R.id.menu_nouns){
             Log.d(DEBUG,"Nouns clicked");
+            Log.d(DEBUG,"Launch NounListFragment");
             return true;
         }else if(id == R.id.menu_verbs){
             Log.d(DEBUG,"Verbs clicked");
+            Log.d(DEBUG,"Launch VerbListFragment");
             return true;
         }else if(id == R.id.menu_prepositions){
             Log.d(DEBUG,"Prepositions clicked");
+            Log.d(DEBUG,"Launch PrepListFragment");
             return true;
         }else if(id == R.id.menu_adjectives){
             Log.d(DEBUG,"Adjectives clicked");
+            Log.d(DEBUG,"Launch AdjListFragment");
             return true;
         }else if(id == R.id.menu_adverbs){
             Log.d(DEBUG,"Adverbs clicked");
+            Log.d(DEBUG,"Launch AdvListFragment");
             return true;
         }else if(id == R.id.menu_numbers){
             Log.d(DEBUG,"Numbers clicked");
+            Log.d(DEBUG,"Launch NumListFragment");
             return true;
         }else if(id == R.id.menu_search){
             Log.d(DEBUG,"Search clicked");
+            Log.d(DEBUG,"Launch SearchFragment");
             return true;
         }else if(id == R.id.menu_quit){
             Log.d(DEBUG,"Quit clicked");
+            Log.d(DEBUG,"Launch QuitFragment");
             return true;
         }
 
