@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment = fm.findFragmentById(R.id.activity_main_fragment_container);
 
         if(fragment == null){
-            fragment = new WordListFragment();
+            fragment = new MainFragment();
             fm.beginTransaction()
                     .add(R.id.activity_main_fragment_container, fragment)
                     .commit();
@@ -76,10 +76,9 @@ public class MainActivity extends AppCompatActivity {
         }else if(id == R.id.menu_nouns){
             Log.d(DEBUG,"Nouns clicked");
             Log.d(DEBUG,"Launch NounListFragment");
-            /*Fragment listFragment = new WordListFragment();
+            Fragment listFragment = new WordListFragment();
             getSupportFragmentManager().beginTransaction().
             replace(R.id.activity_main_fragment_container, listFragment).commit();
-             */
             return true;
         }else if(id == R.id.menu_verbs){
             Log.d(DEBUG,"Verbs clicked");

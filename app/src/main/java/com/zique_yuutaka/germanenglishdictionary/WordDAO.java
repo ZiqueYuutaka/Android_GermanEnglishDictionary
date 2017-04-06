@@ -1,9 +1,13 @@
 package com.zique_yuutaka.germanenglishdictionary;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+import databaseObjects.WordDBHelper;
 import wordObjects.Word;
 
 /**
@@ -12,8 +16,11 @@ import wordObjects.Word;
 
 public class WordDAO {
 
+    private static SQLiteDatabase wordDB;
 
-
+    private WordDAO(Context context){
+        wordDB = new WordDBHelper(context).getWritableDatabase();
+    }
     public static List<Word> getWords(){
         List<Word> words;
         words = new ArrayList<>();
@@ -22,4 +29,8 @@ public class WordDAO {
         }
         return words;
     }
+
+/*    private static List<Word> getWordsFromDB(){
+
+    }*/
 }
